@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Room Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #1a1a40;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Search Section */
+        .search-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #2c2cff, #4e54c8);
+            color: white;
+        }
+
+        .search-form {
+            margin-top: 20px;
+        }
+
+        .search-form input,
+        .search-form select {
+            padding: 10px;
+            margin: 5px;
+            width: 180px;
+        }
+
+        .search-form button {
+            padding: 10px 20px;
+            background: #00ffff;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .search-form button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Rooms */
+        .rooms {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 40px;
+        }
+
+        .room-card {
+            background: white;
+            width: 260px;
+            margin: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: 0.4s;
+        }
+
+        .room-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .room-card h3,
+        .room-card p {
+            padding: 10px;
+        }
+
+        .room-card button {
+            width: 90%;
+            margin: 10px auto 15px;
+            display: block;
+            padding: 8px;
+            border: none;
+            background: #1a1a40;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Hover Animation */
+        .room-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .room-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #1a1a40;
+            color: white;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .slide-up {
+            animation: slideUp 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            .search-form input,
+            .search-form select {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">RoomFinder</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Find Room</a></li>
+            <li><a href="#">Post Room</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <h1 class="fade-in">Find Your Perfect Room</h1>
+        <form class="search-form fade-in">
+            <input type="text" placeholder="Enter City">
+            <select>
+                <option>Room Type</option>
+                <option>Single</option>
+                <option>Double</option>
+                <option>PG</option>
+            </select>
+            <input type="number" placeholder="Max Budget ₹">
+            <button>Search</button>
+        </form>
+    </section>
+
+    <!-- Room Listings -->
+    <section class="rooms">
+        <div class="room-card slide-up">
+            <img src="room1.jpg" alt="Room">
+            <h3>Single Room</h3>
+            <p>📍 Delhi</p>
+            <p>💰 ₹6,000 / month</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="room-card slide-up">
+            <img src="room2.jpg" alt="PG">
+            <h3>PG for Boys</h3>
+            <p>📍 Pune</p>
+            <p>💰 ₹4,500 / month</p>
+            <button>View Details</button>
+        </div>
+
+        <div class="room-card slide-up">
+            <img src="room3.jpg" alt="Room">
+            <h3>Double Room</h3>
+            <p>📍 Bangalore</p>
+            <p>💰 ₹8,000 / month</p>
+            <button>View Details</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 RoomFinder | All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>
